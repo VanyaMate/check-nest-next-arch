@@ -1,11 +1,14 @@
 import {Module} from "@nestjs/common";
-import {RenderModule} from "./modules/render/render.module";
-import {APP_FILTER} from "@nestjs/core";
-import {NotFoundExceptionFilter} from "./modules/render/page404/NotFoundExceptionFilter";
 import {ApiModule} from "./api/api.module";
+import {RenderModule as NextRenderModule} from "nest-next";
+import Next from 'next';
+import path from 'path';
 
 @Module({
     controllers: [],
-    imports: [RenderModule, ApiModule],
+    imports: [
+        NextRenderModule.forRootAsync(Next({ dev: true, dir: path.resolve(__dirname, '..') }), { viewsDir: null }),
+        ApiModule
+    ],
 })
 export class AppModule {}

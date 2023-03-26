@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false
+  },
+  "include": [
+    "./src/api/**/*.ts",
+    "./src/modules/**/*.ts",
+    "./src/enums/**/*.ts",
+    "./src/main.ts",
+    "./src/app.module.ts",
+    "./@types/**/*.d.ts"
+  ]
+}

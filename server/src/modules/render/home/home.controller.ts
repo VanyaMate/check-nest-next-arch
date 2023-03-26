@@ -1,4 +1,4 @@
-import {Controller, Get} from "@nestjs/common";
+import {Controller, Get, Render} from "@nestjs/common";
 
 @Controller({ host: 'localhost' })
 export class HomeController {
